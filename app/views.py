@@ -12,6 +12,7 @@ class InfoView(RequestHandler):
 
     def get(self):
         """List of routes for this API."""
+        print (f"this is op: {options.myvar}")
         routes = {
             'test': options.myvar,
             'info': 'GET /api/v1',
