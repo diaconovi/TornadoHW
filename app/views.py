@@ -14,7 +14,6 @@ class InfoView(RequestHandler):
         """List of routes for this API."""
         print (f"this is op: {options.myvar}")
         routes = {
-            'test': options.myvar,
             'info': 'GET /api/v1',
             'register': 'POST /api/v1/accounts',
             'single profile detail': 'GET /api/v1/accounts/<username>',
@@ -27,5 +26,22 @@ class InfoView(RequestHandler):
             "task detail": 'GET /api/v1/accounts/<username>/tasks/<id>',
             "task update": 'PUT /api/v1/accounts/<username>/tasks/<id>',
             "delete task": 'DELETE /api/v1/accounts/<username>/tasks/<id>'
+        }
+        self.write(json.dumps(routes))
+
+class ConfigView(RequestHandler):
+    """Only allow GET requests."""
+    SUPPORTED_METHODS = ["GET"]
+
+    def set_default_headers(self):
+        """Set the default response header to be JSON."""
+        self.set_header("Content-Type", 'application/json; charset="utf-8"')
+
+    def get(self):
+        """List of routes for this API."""
+        print (f"ops: {options.options}")
+        print
+        routes = {
+            'test': options.myvar,
         }
         self.write(json.dumps(routes))
