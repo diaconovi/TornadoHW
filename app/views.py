@@ -39,7 +39,7 @@ class ConfigView(RequestHandler):
 
     def get(self):
         """List of routes for this API."""
-        print (f"ops: {options.print_help}")
+        print (f"ops: {options.print_help(file=sys.stderr)}")
         print
         routes = {
             'test': options.myvar,
