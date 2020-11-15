@@ -35,8 +35,8 @@ def setConfig():
         config = json.load(json_file)
 
     print(config["testOP"])
+    print(config["tetsList"][0])
     print(config["tetsList"][1])
-    print(config["tetsList"][2])
 
     define('testvar', default='testy', help='port to listen on')
 
@@ -44,6 +44,4 @@ def setConfig():
 
 if __name__ == "__main__":
     # execute only if run as a script
-    print (os.path.dirname(os.path.realpath(__file__)))
-    print (os.listdir('.'))
     main()
