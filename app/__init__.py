@@ -17,7 +17,7 @@ def main():
     config = setConfig()
 
     app = Application([
-        ('/', HelloWorld)
+        ('/', InfoView)
     ])
     http_server = HTTPServer(app)
     http_server.listen(options.port)
