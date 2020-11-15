@@ -5,6 +5,9 @@ from tornado.options import define, options
 from tornado.web import Application
 from app.views import InfoView
 
+#remove me pls
+import os 
+
 define('port', default=8888, help='port to listen on')
 
 
@@ -38,3 +41,9 @@ def setConfig():
     define('testvar', default='testy', help='port to listen on')
 
     return config
+
+if __name__ == "__main__":
+    # execute only if run as a script
+    print (os.path.dirname(os.path.realpath(__file__)))
+    print (os.listdir)
+    main()
