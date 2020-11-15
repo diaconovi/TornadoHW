@@ -24,7 +24,7 @@ def main():
     http_server = HTTPServer(app)
     http_server.listen(options.port)
     print(f'Listening on http://localhost:{options.port}')
-    printf(f'Options from here: {options.myvar}')
+    print(f'Options from here: {options.myvar}')
     print(f'config json: {config["testOP"]}')
     print(f'Option added: {options.testvar}')
     IOLoop.current().start()
