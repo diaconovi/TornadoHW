@@ -45,5 +45,5 @@ def setConfig():
 if __name__ == "__main__":
     # execute only if run as a script
     print (os.path.dirname(os.path.realpath(__file__)))
-    print (os.listdir)
+    print (os.listdir('.'))
     main()
