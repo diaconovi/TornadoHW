@@ -3,7 +3,7 @@ from tornado.httpserver import HTTPServer
 from tornado.ioloop import IOLoop
 from tornado.options import define, options
 from tornado.web import Application
-from app.views import InfoView
+from app.views import InfoView, ConfigView
 
 #remove me pls
 import os 
@@ -19,7 +19,8 @@ def main():
     config = setConfig()
 
     app = Application([
-        ('/', InfoView)
+        ('/', InfoView), 
+        ('/ConfigView', ConfigView)
     ])
     http_server = HTTPServer(app)
     http_server.listen(options.port)
