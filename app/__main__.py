@@ -31,7 +31,7 @@ def main():
     IOLoop.current().start()
 
 def setConfig():
-    with open('config/config.json.txt') as json_file:
+    with open('config/config.json') as json_file:
         config = json.load(json_file)
 
     print(config["testOP"])
