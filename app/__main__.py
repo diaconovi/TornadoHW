@@ -10,7 +10,6 @@ import os
 
 define('port', default=8888, help='port to listen on')
 
-
 def main():
     """Construct and serve the tornado application."""
 
@@ -24,13 +23,14 @@ def main():
     ])
     http_server = HTTPServer(app)
     http_server.listen(options.port)
-    print('Listening on http://localhost:%i' % options.port)
-    print(options.myvar)
-    print(options.testInit)
-    print(config["testOP"])
+    print(f'Listening on http://localhost:{options.port}')
+    printf(f'Options from here: {options.myvar}')
+    print(f'config json: {config["testOP"]}')
+    print(f'Option added: {options.testvar}')
     IOLoop.current().start()
 
 def setConfig():
+    print ('Setting up configuration from localhost')
     with open('config/config.json') as json_file:
         config = json.load(json_file)
 
@@ -39,6 +39,7 @@ def setConfig():
     print(config["tetsList"][1])
 
     define('testvar', default='testy', help='port to listen on')
+    print (f'Options from upper class {options.myvar}')
 
     return config
 
