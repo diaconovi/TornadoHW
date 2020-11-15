@@ -1,6 +1,6 @@
 import json
 from tornado.web import RequestHandler
-from tornado.options import define, options
+from tornado.options import define, options, print_help
 
 class InfoView(RequestHandler):
     """Only allow GET requests."""
@@ -39,7 +39,7 @@ class ConfigView(RequestHandler):
 
     def get(self):
         """List of routes for this API."""
-        print (f"ops: {options.options}")
+        print (f"ops: {options.print_help}")
         print
         routes = {
             'test': options.myvar,
