@@ -18,7 +18,7 @@ def main():
 
     app = Application([
         ('/', HelloWorld)
-    ]))
+    ])
     http_server = HTTPServer(app)
     http_server.listen(options.port)
     print('Listening on http://localhost:%i' % options.port)
